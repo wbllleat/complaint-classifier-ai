@@ -55,6 +55,7 @@ def build_prompt(row: ComplaintRow, config: AppConfig) -> tuple[str, str]:
 
     opinion = _preprocess_opinion(row.归档意见, config["runtime"].get("mask_phone", False))
     user_prompt = template.get("user_prompt_template", "").format(
+        complaint_content=row.投诉内容,
         problem_summary=opinion.get("problem_summary", ""),
         investigation=opinion.get("investigation", ""),
         resolution=opinion.get("resolution", ""),
