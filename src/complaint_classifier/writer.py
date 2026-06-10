@@ -95,7 +95,7 @@ def write_test_results(
 
     # Headers
     headers = [
-        "行号", "工单号", "投诉主题", "受理渠道",
+        "行号", "工单号", "投诉主题", "受理渠道", "投诉内容",
         "归档意见(前200字)", "一级分类", "二级分类", "置信度", "分类理由",
     ]
     ws.append(headers)
@@ -111,6 +111,7 @@ def write_test_results(
             row.工单号,
             row.投诉主题,
             row.受理渠道,
+            row.投诉内容[:200],
             row.归档意见[:200],
             result["primary_category"],
             result["secondary_category"],
@@ -120,7 +121,7 @@ def write_test_results(
         # Highlight low confidence rows
         if result["confidence"] == "low":
             row_num = ws.max_row
-            for col in range(1, 10):
+            for col in range(1, 11):
                 ws.cell(row=row_num, column=col).fill = copy(LOW_CONFIDENCE_FILL)
 
     wb.save(output_path)
