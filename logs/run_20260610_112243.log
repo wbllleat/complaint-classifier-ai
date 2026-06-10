@@ -1,0 +1,2250 @@
+2026-06-10 11:22:49,084 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:22:49,085 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:22:49,087 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:22:49,088 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:22:49,345 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:22:50,149 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:22:50,149 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:22:50,151 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:22:50,153 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:22:50,520 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:22:52,207 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:22:52,210 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:22:52,211 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:22:52,211 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:22:52,219 [ERROR] complaint_classifier.classifier: Row 4 failed:
+Traceback (most recent call last):
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 113, in call_llm
+    response = client.chat.completions.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_utils\_utils.py", line 298, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1239, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_base_client.py", line 1332, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_base_client.py", line 1105, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.NotFoundError: Error code: 404 - {'error': {'message': 'The model `Qwen3.7-Max` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}, 'request_id': '21ce23c3-bc60-98ce-80d0-13adbfc54bf5'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 249, in classify_batch
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 286, in _classify_one
+    return classify_single(row, app_config, cache)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 213, in classify_single
+    response, token_usage = call_llm(system_prompt, user_prompt, app_config["llm"])
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 147, in call_llm
+    raise LLMCallError(status, str(body))
+complaint_classifier.models.LLMCallError: LLM call failed [404]: {'message': 'The model `Qwen3.7-Max` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}
+
+2026-06-10 11:22:52,221 [ERROR] complaint_classifier.classifier: Row 2 failed:
+Traceback (most recent call last):
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 113, in call_llm
+    response = client.chat.completions.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_utils\_utils.py", line 298, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1239, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_base_client.py", line 1332, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_base_client.py", line 1105, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.NotFoundError: Error code: 404 - {'error': {'message': 'The model `Qwen3.7-Max` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}, 'request_id': '3a28a57e-393a-9261-84c8-e9c0734fa33b'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 249, in classify_batch
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 286, in _classify_one
+    return classify_single(row, app_config, cache)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 213, in classify_single
+    response, token_usage = call_llm(system_prompt, user_prompt, app_config["llm"])
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 147, in call_llm
+    raise LLMCallError(status, str(body))
+complaint_classifier.models.LLMCallError: LLM call failed [404]: {'message': 'The model `Qwen3.7-Max` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}
+
+2026-06-10 11:22:52,222 [ERROR] complaint_classifier.classifier: Row 5 failed:
+Traceback (most recent call last):
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 113, in call_llm
+    response = client.chat.completions.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_utils\_utils.py", line 298, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1239, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_base_client.py", line 1332, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_base_client.py", line 1105, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.NotFoundError: Error code: 404 - {'error': {'message': 'The model `Qwen3.7-Max` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}, 'request_id': '7f4ba6d6-d3e2-910a-b45d-eac4327842b9'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 249, in classify_batch
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 286, in _classify_one
+    return classify_single(row, app_config, cache)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 213, in classify_single
+    response, token_usage = call_llm(system_prompt, user_prompt, app_config["llm"])
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 147, in call_llm
+    raise LLMCallError(status, str(body))
+complaint_classifier.models.LLMCallError: LLM call failed [404]: {'message': 'The model `Qwen3.7-Max` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}
+
+2026-06-10 11:22:52,327 [ERROR] complaint_classifier.classifier: Row 3 failed:
+Traceback (most recent call last):
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 113, in call_llm
+    response = client.chat.completions.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_utils\_utils.py", line 298, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1239, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_base_client.py", line 1332, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_base_client.py", line 1105, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.NotFoundError: Error code: 404 - {'error': {'message': 'The model `Qwen3.7-Max` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}, 'request_id': '4a3428f6-23ca-9697-92ca-ec30e46f6500'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 249, in classify_batch
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 286, in _classify_one
+    return classify_single(row, app_config, cache)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 213, in classify_single
+    response, token_usage = call_llm(system_prompt, user_prompt, app_config["llm"])
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 147, in call_llm
+    raise LLMCallError(status, str(body))
+complaint_classifier.models.LLMCallError: LLM call failed [404]: {'message': 'The model `Qwen3.7-Max` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}
+
+2026-06-10 11:22:52,683 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:22:52,685 [ERROR] complaint_classifier.classifier: Row 6 failed:
+Traceback (most recent call last):
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 113, in call_llm
+    response = client.chat.completions.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_utils\_utils.py", line 298, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1239, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_base_client.py", line 1332, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_base_client.py", line 1105, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.NotFoundError: Error code: 404 - {'error': {'message': 'The model `Qwen3.7-Max` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}, 'request_id': '50111f4f-5e64-9ca5-bae1-25f31e821354'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 249, in classify_batch
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 286, in _classify_one
+    return classify_single(row, app_config, cache)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 213, in classify_single
+    response, token_usage = call_llm(system_prompt, user_prompt, app_config["llm"])
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 147, in call_llm
+    raise LLMCallError(status, str(body))
+complaint_classifier.models.LLMCallError: LLM call failed [404]: {'message': 'The model `Qwen3.7-Max` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}
+
+2026-06-10 11:22:54,052 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:22:54,052 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:22:54,052 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:22:54,074 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:22:54,345 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:22:55,113 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:22:55,115 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:22:55,116 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:22:55,136 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:22:55,397 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:22:57,172 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:22:57,174 [ERROR] complaint_classifier.classifier: Row 8 failed:
+Traceback (most recent call last):
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 113, in call_llm
+    response = client.chat.completions.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_utils\_utils.py", line 298, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1239, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_base_client.py", line 1332, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_base_client.py", line 1105, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.NotFoundError: Error code: 404 - {'error': {'message': 'The model `Qwen3.7-Max` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}, 'request_id': '6c9f65a2-123b-9de9-b85c-a47b467a0ce7'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 249, in classify_batch
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 286, in _classify_one
+    return classify_single(row, app_config, cache)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 213, in classify_single
+    response, token_usage = call_llm(system_prompt, user_prompt, app_config["llm"])
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 147, in call_llm
+    raise LLMCallError(status, str(body))
+complaint_classifier.models.LLMCallError: LLM call failed [404]: {'message': 'The model `Qwen3.7-Max` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}
+
+2026-06-10 11:22:57,177 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:22:57,180 [ERROR] complaint_classifier.classifier: Row 7 failed:
+Traceback (most recent call last):
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 113, in call_llm
+    response = client.chat.completions.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_utils\_utils.py", line 298, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1239, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_base_client.py", line 1332, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_base_client.py", line 1105, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.NotFoundError: Error code: 404 - {'error': {'message': 'The model `Qwen3.7-Max` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}, 'request_id': '799a468b-1cf7-995c-8f2e-3a7f56e99947'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 249, in classify_batch
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 286, in _classify_one
+    return classify_single(row, app_config, cache)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 213, in classify_single
+    response, token_usage = call_llm(system_prompt, user_prompt, app_config["llm"])
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 147, in call_llm
+    raise LLMCallError(status, str(body))
+complaint_classifier.models.LLMCallError: LLM call failed [404]: {'message': 'The model `Qwen3.7-Max` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}
+
+2026-06-10 11:22:57,180 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:22:57,182 [ERROR] complaint_classifier.classifier: Row 9 failed:
+Traceback (most recent call last):
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 113, in call_llm
+    response = client.chat.completions.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_utils\_utils.py", line 298, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1239, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_base_client.py", line 1332, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_base_client.py", line 1105, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.NotFoundError: Error code: 404 - {'error': {'message': 'The model `Qwen3.7-Max` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}, 'request_id': '9ea3c110-beac-9ec5-8424-96edbb1b0a75'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 249, in classify_batch
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 286, in _classify_one
+    return classify_single(row, app_config, cache)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 213, in classify_single
+    response, token_usage = call_llm(system_prompt, user_prompt, app_config["llm"])
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 147, in call_llm
+    raise LLMCallError(status, str(body))
+complaint_classifier.models.LLMCallError: LLM call failed [404]: {'message': 'The model `Qwen3.7-Max` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}
+
+2026-06-10 11:22:57,196 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:22:57,197 [ERROR] complaint_classifier.classifier: Row 10 failed:
+Traceback (most recent call last):
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 113, in call_llm
+    response = client.chat.completions.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_utils\_utils.py", line 298, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1239, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_base_client.py", line 1332, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_base_client.py", line 1105, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.NotFoundError: Error code: 404 - {'error': {'message': 'The model `Qwen3.7-Max` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}, 'request_id': 'c2571790-db29-976a-811a-ba13c1028def'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 249, in classify_batch
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 286, in _classify_one
+    return classify_single(row, app_config, cache)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 213, in classify_single
+    response, token_usage = call_llm(system_prompt, user_prompt, app_config["llm"])
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 147, in call_llm
+    raise LLMCallError(status, str(body))
+complaint_classifier.models.LLMCallError: LLM call failed [404]: {'message': 'The model `Qwen3.7-Max` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}
+
+2026-06-10 11:22:57,451 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:22:57,453 [ERROR] complaint_classifier.classifier: Row 11 failed:
+Traceback (most recent call last):
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 113, in call_llm
+    response = client.chat.completions.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_utils\_utils.py", line 298, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1239, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_base_client.py", line 1332, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_base_client.py", line 1105, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.NotFoundError: Error code: 404 - {'error': {'message': 'The model `Qwen3.7-Max` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}, 'request_id': '1818b247-b4be-9719-bf80-6a724230b190'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 249, in classify_batch
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 286, in _classify_one
+    return classify_single(row, app_config, cache)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 213, in classify_single
+    response, token_usage = call_llm(system_prompt, user_prompt, app_config["llm"])
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 147, in call_llm
+    raise LLMCallError(status, str(body))
+complaint_classifier.models.LLMCallError: LLM call failed [404]: {'message': 'The model `Qwen3.7-Max` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}
+
+2026-06-10 11:22:58,999 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:22:59,009 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:22:59,009 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:22:59,014 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:22:59,204 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:23:00,053 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:23:00,067 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:23:00,067 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:23:00,069 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:23:00,257 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:23:02,108 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:23:02,110 [ERROR] complaint_classifier.classifier: Row 13 failed:
+Traceback (most recent call last):
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 113, in call_llm
+    response = client.chat.completions.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_utils\_utils.py", line 298, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1239, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_base_client.py", line 1332, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_base_client.py", line 1105, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.NotFoundError: Error code: 404 - {'error': {'message': 'The model `Qwen3.7-Max` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}, 'request_id': 'c2378982-64f9-9cbd-b652-166845342c73'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 249, in classify_batch
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 286, in _classify_one
+    return classify_single(row, app_config, cache)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 213, in classify_single
+    response, token_usage = call_llm(system_prompt, user_prompt, app_config["llm"])
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 147, in call_llm
+    raise LLMCallError(status, str(body))
+complaint_classifier.models.LLMCallError: LLM call failed [404]: {'message': 'The model `Qwen3.7-Max` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}
+
+2026-06-10 11:23:02,124 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:23:02,125 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:23:02,126 [ERROR] complaint_classifier.classifier: Row 14 failed:
+Traceback (most recent call last):
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 113, in call_llm
+    response = client.chat.completions.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_utils\_utils.py", line 298, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1239, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_base_client.py", line 1332, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_base_client.py", line 1105, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.NotFoundError: Error code: 404 - {'error': {'message': 'The model `Qwen3.7-Max` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}, 'request_id': '119195ea-4b9e-9ce9-a18d-4e2ca2f16ba0'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 249, in classify_batch
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 286, in _classify_one
+    return classify_single(row, app_config, cache)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 213, in classify_single
+    response, token_usage = call_llm(system_prompt, user_prompt, app_config["llm"])
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 147, in call_llm
+    raise LLMCallError(status, str(body))
+complaint_classifier.models.LLMCallError: LLM call failed [404]: {'message': 'The model `Qwen3.7-Max` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}
+
+2026-06-10 11:23:02,127 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:23:02,130 [ERROR] complaint_classifier.classifier: Row 12 failed:
+Traceback (most recent call last):
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 113, in call_llm
+    response = client.chat.completions.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_utils\_utils.py", line 298, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1239, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_base_client.py", line 1332, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_base_client.py", line 1105, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.NotFoundError: Error code: 404 - {'error': {'message': 'The model `Qwen3.7-Max` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}, 'request_id': '37fafee9-4373-9f54-832b-19c14d1cb75d'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 249, in classify_batch
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 286, in _classify_one
+    return classify_single(row, app_config, cache)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 213, in classify_single
+    response, token_usage = call_llm(system_prompt, user_prompt, app_config["llm"])
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 147, in call_llm
+    raise LLMCallError(status, str(body))
+complaint_classifier.models.LLMCallError: LLM call failed [404]: {'message': 'The model `Qwen3.7-Max` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}
+
+2026-06-10 11:23:02,132 [ERROR] complaint_classifier.classifier: Row 15 failed:
+Traceback (most recent call last):
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 113, in call_llm
+    response = client.chat.completions.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_utils\_utils.py", line 298, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1239, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_base_client.py", line 1332, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_base_client.py", line 1105, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.NotFoundError: Error code: 404 - {'error': {'message': 'The model `Qwen3.7-Max` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}, 'request_id': '1d9a664f-147f-93c5-9066-284684ef3f74'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 249, in classify_batch
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 286, in _classify_one
+    return classify_single(row, app_config, cache)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 213, in classify_single
+    response, token_usage = call_llm(system_prompt, user_prompt, app_config["llm"])
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 147, in call_llm
+    raise LLMCallError(status, str(body))
+complaint_classifier.models.LLMCallError: LLM call failed [404]: {'message': 'The model `Qwen3.7-Max` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}
+
+2026-06-10 11:23:02,319 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:23:02,320 [ERROR] complaint_classifier.classifier: Row 16 failed:
+Traceback (most recent call last):
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 113, in call_llm
+    response = client.chat.completions.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_utils\_utils.py", line 298, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1239, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_base_client.py", line 1332, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_base_client.py", line 1105, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.NotFoundError: Error code: 404 - {'error': {'message': 'The model `Qwen3.7-Max` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}, 'request_id': 'f1d7ceb2-b316-906d-94c3-541e44059c15'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 249, in classify_batch
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 286, in _classify_one
+    return classify_single(row, app_config, cache)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 213, in classify_single
+    response, token_usage = call_llm(system_prompt, user_prompt, app_config["llm"])
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 147, in call_llm
+    raise LLMCallError(status, str(body))
+complaint_classifier.models.LLMCallError: LLM call failed [404]: {'message': 'The model `Qwen3.7-Max` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}
+
+2026-06-10 11:23:03,952 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:23:03,968 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:23:03,985 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:23:03,991 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:23:04,141 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:23:05,010 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:23:05,025 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:23:05,046 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:23:05,052 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:23:05,193 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:23:07,066 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:23:07,068 [ERROR] complaint_classifier.classifier: Row 17 failed:
+Traceback (most recent call last):
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 113, in call_llm
+    response = client.chat.completions.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_utils\_utils.py", line 298, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1239, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_base_client.py", line 1332, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_base_client.py", line 1105, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.NotFoundError: Error code: 404 - {'error': {'message': 'The model `Qwen3.7-Max` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}, 'request_id': '451af613-76b6-9277-9e86-c3507ec97875'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 249, in classify_batch
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 286, in _classify_one
+    return classify_single(row, app_config, cache)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 213, in classify_single
+    response, token_usage = call_llm(system_prompt, user_prompt, app_config["llm"])
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 147, in call_llm
+    raise LLMCallError(status, str(body))
+complaint_classifier.models.LLMCallError: LLM call failed [404]: {'message': 'The model `Qwen3.7-Max` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}
+
+2026-06-10 11:23:07,082 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:23:07,084 [ERROR] complaint_classifier.classifier: Row 19 failed:
+Traceback (most recent call last):
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 113, in call_llm
+    response = client.chat.completions.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_utils\_utils.py", line 298, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1239, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_base_client.py", line 1332, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_base_client.py", line 1105, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.NotFoundError: Error code: 404 - {'error': {'message': 'The model `Qwen3.7-Max` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}, 'request_id': '9ca1b8ca-d341-9fb8-bbf5-65b76fbe9c95'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 249, in classify_batch
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 286, in _classify_one
+    return classify_single(row, app_config, cache)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 213, in classify_single
+    response, token_usage = call_llm(system_prompt, user_prompt, app_config["llm"])
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 147, in call_llm
+    raise LLMCallError(status, str(body))
+complaint_classifier.models.LLMCallError: LLM call failed [404]: {'message': 'The model `Qwen3.7-Max` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}
+
+2026-06-10 11:23:07,111 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:23:07,114 [ERROR] complaint_classifier.classifier: Row 18 failed:
+Traceback (most recent call last):
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 113, in call_llm
+    response = client.chat.completions.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_utils\_utils.py", line 298, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1239, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_base_client.py", line 1332, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_base_client.py", line 1105, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.NotFoundError: Error code: 404 - {'error': {'message': 'The model `Qwen3.7-Max` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}, 'request_id': 'eeab16b7-fd0e-9ec0-bbb1-e5d07c171906'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 249, in classify_batch
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 286, in _classify_one
+    return classify_single(row, app_config, cache)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 213, in classify_single
+    response, token_usage = call_llm(system_prompt, user_prompt, app_config["llm"])
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 147, in call_llm
+    raise LLMCallError(status, str(body))
+complaint_classifier.models.LLMCallError: LLM call failed [404]: {'message': 'The model `Qwen3.7-Max` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}
+
+2026-06-10 11:23:07,114 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:23:07,117 [ERROR] complaint_classifier.classifier: Row 20 failed:
+Traceback (most recent call last):
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 113, in call_llm
+    response = client.chat.completions.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_utils\_utils.py", line 298, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1239, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_base_client.py", line 1332, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_base_client.py", line 1105, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.NotFoundError: Error code: 404 - {'error': {'message': 'The model `Qwen3.7-Max` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}, 'request_id': 'eec76ced-76d4-965f-b43f-b264a78e4322'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 249, in classify_batch
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 286, in _classify_one
+    return classify_single(row, app_config, cache)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 213, in classify_single
+    response, token_usage = call_llm(system_prompt, user_prompt, app_config["llm"])
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 147, in call_llm
+    raise LLMCallError(status, str(body))
+complaint_classifier.models.LLMCallError: LLM call failed [404]: {'message': 'The model `Qwen3.7-Max` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}
+
+2026-06-10 11:23:07,252 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:23:07,254 [ERROR] complaint_classifier.classifier: Row 21 failed:
+Traceback (most recent call last):
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 113, in call_llm
+    response = client.chat.completions.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_utils\_utils.py", line 298, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1239, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_base_client.py", line 1332, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_base_client.py", line 1105, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.NotFoundError: Error code: 404 - {'error': {'message': 'The model `Qwen3.7-Max` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}, 'request_id': 'efef49d3-91fb-9bcc-86c8-ef3747cbeca2'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 249, in classify_batch
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 286, in _classify_one
+    return classify_single(row, app_config, cache)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 213, in classify_single
+    response, token_usage = call_llm(system_prompt, user_prompt, app_config["llm"])
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 147, in call_llm
+    raise LLMCallError(status, str(body))
+complaint_classifier.models.LLMCallError: LLM call failed [404]: {'message': 'The model `Qwen3.7-Max` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}
+
+2026-06-10 11:23:08,870 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:23:08,883 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:23:08,884 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:23:08,913 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:23:09,001 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:23:09,930 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:23:09,940 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:23:09,945 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:23:09,967 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:23:10,062 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:23:11,985 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:23:11,987 [ERROR] complaint_classifier.classifier: Row 22 failed:
+Traceback (most recent call last):
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 113, in call_llm
+    response = client.chat.completions.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_utils\_utils.py", line 298, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1239, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_base_client.py", line 1332, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_base_client.py", line 1105, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.NotFoundError: Error code: 404 - {'error': {'message': 'The model `Qwen3.7-Max` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}, 'request_id': 'ce560bf7-5bc7-951d-85d8-e654c36f5db6'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 249, in classify_batch
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 286, in _classify_one
+    return classify_single(row, app_config, cache)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 213, in classify_single
+    response, token_usage = call_llm(system_prompt, user_prompt, app_config["llm"])
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 147, in call_llm
+    raise LLMCallError(status, str(body))
+complaint_classifier.models.LLMCallError: LLM call failed [404]: {'message': 'The model `Qwen3.7-Max` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}
+
+2026-06-10 11:23:11,999 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:23:12,000 [ERROR] complaint_classifier.classifier: Row 23 failed:
+Traceback (most recent call last):
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 113, in call_llm
+    response = client.chat.completions.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_utils\_utils.py", line 298, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1239, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_base_client.py", line 1332, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_base_client.py", line 1105, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.NotFoundError: Error code: 404 - {'error': {'message': 'The model `Qwen3.7-Max` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}, 'request_id': 'ad93afd0-d661-9d29-8913-a166b3d85f12'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 249, in classify_batch
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 286, in _classify_one
+    return classify_single(row, app_config, cache)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 213, in classify_single
+    response, token_usage = call_llm(system_prompt, user_prompt, app_config["llm"])
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 147, in call_llm
+    raise LLMCallError(status, str(body))
+complaint_classifier.models.LLMCallError: LLM call failed [404]: {'message': 'The model `Qwen3.7-Max` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}
+
+2026-06-10 11:23:12,003 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:23:12,004 [ERROR] complaint_classifier.classifier: Row 25 failed:
+Traceback (most recent call last):
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 113, in call_llm
+    response = client.chat.completions.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_utils\_utils.py", line 298, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1239, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_base_client.py", line 1332, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_base_client.py", line 1105, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.NotFoundError: Error code: 404 - {'error': {'message': 'The model `Qwen3.7-Max` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}, 'request_id': '49b4ce22-66f8-9a18-b654-d3bc91ef2512'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 249, in classify_batch
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 286, in _classify_one
+    return classify_single(row, app_config, cache)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 213, in classify_single
+    response, token_usage = call_llm(system_prompt, user_prompt, app_config["llm"])
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 147, in call_llm
+    raise LLMCallError(status, str(body))
+complaint_classifier.models.LLMCallError: LLM call failed [404]: {'message': 'The model `Qwen3.7-Max` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}
+
+2026-06-10 11:23:12,021 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:23:12,023 [ERROR] complaint_classifier.classifier: Row 24 failed:
+Traceback (most recent call last):
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 113, in call_llm
+    response = client.chat.completions.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_utils\_utils.py", line 298, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1239, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_base_client.py", line 1332, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_base_client.py", line 1105, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.NotFoundError: Error code: 404 - {'error': {'message': 'The model `Qwen3.7-Max` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}, 'request_id': '5ac74c74-b331-9715-9e26-422b8f44dd01'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 249, in classify_batch
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 286, in _classify_one
+    return classify_single(row, app_config, cache)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 213, in classify_single
+    response, token_usage = call_llm(system_prompt, user_prompt, app_config["llm"])
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 147, in call_llm
+    raise LLMCallError(status, str(body))
+complaint_classifier.models.LLMCallError: LLM call failed [404]: {'message': 'The model `Qwen3.7-Max` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}
+
+2026-06-10 11:23:12,127 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:23:12,130 [ERROR] complaint_classifier.classifier: Row 26 failed:
+Traceback (most recent call last):
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 113, in call_llm
+    response = client.chat.completions.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_utils\_utils.py", line 298, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1239, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_base_client.py", line 1332, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_base_client.py", line 1105, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.NotFoundError: Error code: 404 - {'error': {'message': 'The model `Qwen3.7-Max` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}, 'request_id': 'e6d232e6-40de-9183-bb5a-fb7c383ee8ef'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 249, in classify_batch
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 286, in _classify_one
+    return classify_single(row, app_config, cache)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 213, in classify_single
+    response, token_usage = call_llm(system_prompt, user_prompt, app_config["llm"])
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 147, in call_llm
+    raise LLMCallError(status, str(body))
+complaint_classifier.models.LLMCallError: LLM call failed [404]: {'message': 'The model `Qwen3.7-Max` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}
+
+2026-06-10 11:23:13,771 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:23:13,811 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:23:13,827 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:23:13,833 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:23:13,949 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:23:14,829 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:23:14,867 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:23:14,882 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:23:14,892 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:23:15,006 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:23:16,886 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:23:16,886 [ERROR] complaint_classifier.classifier: Row 27 failed:
+Traceback (most recent call last):
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 113, in call_llm
+    response = client.chat.completions.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_utils\_utils.py", line 298, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1239, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_base_client.py", line 1332, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_base_client.py", line 1105, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.NotFoundError: Error code: 404 - {'error': {'message': 'The model `Qwen3.7-Max` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}, 'request_id': '3d085542-10c1-9255-b5a6-04e75681b6b0'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 249, in classify_batch
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 286, in _classify_one
+    return classify_single(row, app_config, cache)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 213, in classify_single
+    response, token_usage = call_llm(system_prompt, user_prompt, app_config["llm"])
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 147, in call_llm
+    raise LLMCallError(status, str(body))
+complaint_classifier.models.LLMCallError: LLM call failed [404]: {'message': 'The model `Qwen3.7-Max` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}
+
+2026-06-10 11:23:16,924 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:23:16,925 [ERROR] complaint_classifier.classifier: Row 28 failed:
+Traceback (most recent call last):
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 113, in call_llm
+    response = client.chat.completions.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_utils\_utils.py", line 298, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1239, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_base_client.py", line 1332, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_base_client.py", line 1105, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.NotFoundError: Error code: 404 - {'error': {'message': 'The model `Qwen3.7-Max` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}, 'request_id': 'c34f0918-6b32-9aa4-a792-28072e8760f8'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 249, in classify_batch
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 286, in _classify_one
+    return classify_single(row, app_config, cache)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 213, in classify_single
+    response, token_usage = call_llm(system_prompt, user_prompt, app_config["llm"])
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 147, in call_llm
+    raise LLMCallError(status, str(body))
+complaint_classifier.models.LLMCallError: LLM call failed [404]: {'message': 'The model `Qwen3.7-Max` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}
+
+2026-06-10 11:23:16,937 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:23:16,939 [ERROR] complaint_classifier.classifier: Row 30 failed:
+Traceback (most recent call last):
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 113, in call_llm
+    response = client.chat.completions.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_utils\_utils.py", line 298, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1239, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_base_client.py", line 1332, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_base_client.py", line 1105, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.NotFoundError: Error code: 404 - {'error': {'message': 'The model `Qwen3.7-Max` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}, 'request_id': '1bfba02b-eab3-96e7-ba27-182cc29b7762'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 249, in classify_batch
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 286, in _classify_one
+    return classify_single(row, app_config, cache)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 213, in classify_single
+    response, token_usage = call_llm(system_prompt, user_prompt, app_config["llm"])
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 147, in call_llm
+    raise LLMCallError(status, str(body))
+complaint_classifier.models.LLMCallError: LLM call failed [404]: {'message': 'The model `Qwen3.7-Max` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}
+
+2026-06-10 11:23:16,944 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:23:16,947 [ERROR] complaint_classifier.classifier: Row 29 failed:
+Traceback (most recent call last):
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 113, in call_llm
+    response = client.chat.completions.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_utils\_utils.py", line 298, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1239, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_base_client.py", line 1332, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_base_client.py", line 1105, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.NotFoundError: Error code: 404 - {'error': {'message': 'The model `Qwen3.7-Max` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}, 'request_id': '16869b4b-640a-9ebc-a574-64564c6379c2'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 249, in classify_batch
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 286, in _classify_one
+    return classify_single(row, app_config, cache)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 213, in classify_single
+    response, token_usage = call_llm(system_prompt, user_prompt, app_config["llm"])
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 147, in call_llm
+    raise LLMCallError(status, str(body))
+complaint_classifier.models.LLMCallError: LLM call failed [404]: {'message': 'The model `Qwen3.7-Max` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}
+
+2026-06-10 11:23:17,072 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:23:17,073 [ERROR] complaint_classifier.classifier: Row 31 failed:
+Traceback (most recent call last):
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 113, in call_llm
+    response = client.chat.completions.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_utils\_utils.py", line 298, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1239, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_base_client.py", line 1332, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_base_client.py", line 1105, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.NotFoundError: Error code: 404 - {'error': {'message': 'The model `Qwen3.7-Max` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}, 'request_id': '6b79ed7f-f029-90cf-81e5-90f1435d2fbb'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 249, in classify_batch
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 286, in _classify_one
+    return classify_single(row, app_config, cache)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 213, in classify_single
+    response, token_usage = call_llm(system_prompt, user_prompt, app_config["llm"])
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 147, in call_llm
+    raise LLMCallError(status, str(body))
+complaint_classifier.models.LLMCallError: LLM call failed [404]: {'message': 'The model `Qwen3.7-Max` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}
+
+2026-06-10 11:23:18,666 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:23:18,750 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:23:18,754 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:23:18,757 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:23:18,843 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:23:19,723 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:23:19,806 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:23:19,812 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:23:19,817 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:23:19,904 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:23:21,775 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:23:21,776 [ERROR] complaint_classifier.classifier: Row 32 failed:
+Traceback (most recent call last):
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 113, in call_llm
+    response = client.chat.completions.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_utils\_utils.py", line 298, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1239, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_base_client.py", line 1332, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_base_client.py", line 1105, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.NotFoundError: Error code: 404 - {'error': {'message': 'The model `Qwen3.7-Max` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}, 'request_id': '112c7a48-537a-9870-9c74-efbc5f6dd556'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 249, in classify_batch
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 286, in _classify_one
+    return classify_single(row, app_config, cache)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 213, in classify_single
+    response, token_usage = call_llm(system_prompt, user_prompt, app_config["llm"])
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 147, in call_llm
+    raise LLMCallError(status, str(body))
+complaint_classifier.models.LLMCallError: LLM call failed [404]: {'message': 'The model `Qwen3.7-Max` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}
+
+2026-06-10 11:23:21,862 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:23:21,865 [ERROR] complaint_classifier.classifier: Row 35 failed:
+Traceback (most recent call last):
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 113, in call_llm
+    response = client.chat.completions.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_utils\_utils.py", line 298, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1239, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_base_client.py", line 1332, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_base_client.py", line 1105, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.NotFoundError: Error code: 404 - {'error': {'message': 'The model `Qwen3.7-Max` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}, 'request_id': '83375d5c-c9d5-9747-9aed-f794e7c200f7'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 249, in classify_batch
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 286, in _classify_one
+    return classify_single(row, app_config, cache)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 213, in classify_single
+    response, token_usage = call_llm(system_prompt, user_prompt, app_config["llm"])
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 147, in call_llm
+    raise LLMCallError(status, str(body))
+complaint_classifier.models.LLMCallError: LLM call failed [404]: {'message': 'The model `Qwen3.7-Max` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}
+
+2026-06-10 11:23:21,872 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:23:21,873 [ERROR] complaint_classifier.classifier: Row 33 failed:
+Traceback (most recent call last):
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 113, in call_llm
+    response = client.chat.completions.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_utils\_utils.py", line 298, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1239, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_base_client.py", line 1332, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_base_client.py", line 1105, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.NotFoundError: Error code: 404 - {'error': {'message': 'The model `Qwen3.7-Max` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}, 'request_id': 'eaa33808-c8f1-9dbf-932b-c37de210d3c8'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 249, in classify_batch
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 286, in _classify_one
+    return classify_single(row, app_config, cache)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 213, in classify_single
+    response, token_usage = call_llm(system_prompt, user_prompt, app_config["llm"])
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 147, in call_llm
+    raise LLMCallError(status, str(body))
+complaint_classifier.models.LLMCallError: LLM call failed [404]: {'message': 'The model `Qwen3.7-Max` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}
+
+2026-06-10 11:23:21,877 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:23:21,879 [ERROR] complaint_classifier.classifier: Row 34 failed:
+Traceback (most recent call last):
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 113, in call_llm
+    response = client.chat.completions.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_utils\_utils.py", line 298, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1239, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_base_client.py", line 1332, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_base_client.py", line 1105, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.NotFoundError: Error code: 404 - {'error': {'message': 'The model `Qwen3.7-Max` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}, 'request_id': 'd91d00b8-2c62-9e77-9234-f3a018800b75'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 249, in classify_batch
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 286, in _classify_one
+    return classify_single(row, app_config, cache)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 213, in classify_single
+    response, token_usage = call_llm(system_prompt, user_prompt, app_config["llm"])
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 147, in call_llm
+    raise LLMCallError(status, str(body))
+complaint_classifier.models.LLMCallError: LLM call failed [404]: {'message': 'The model `Qwen3.7-Max` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}
+
+2026-06-10 11:23:21,956 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:23:21,958 [ERROR] complaint_classifier.classifier: Row 36 failed:
+Traceback (most recent call last):
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 113, in call_llm
+    response = client.chat.completions.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_utils\_utils.py", line 298, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1239, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_base_client.py", line 1332, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_base_client.py", line 1105, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.NotFoundError: Error code: 404 - {'error': {'message': 'The model `Qwen3.7-Max` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}, 'request_id': 'f05c1b22-ca80-9899-a614-ddae3907414b'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 249, in classify_batch
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 286, in _classify_one
+    return classify_single(row, app_config, cache)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 213, in classify_single
+    response, token_usage = call_llm(system_prompt, user_prompt, app_config["llm"])
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 147, in call_llm
+    raise LLMCallError(status, str(body))
+complaint_classifier.models.LLMCallError: LLM call failed [404]: {'message': 'The model `Qwen3.7-Max` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}
+
+2026-06-10 11:23:23,584 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:23:23,732 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:23:23,732 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:23:23,739 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:23:23,767 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:23:24,636 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:23:24,786 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:23:24,789 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:23:24,791 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:23:24,821 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:23:26,688 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:23:26,690 [ERROR] complaint_classifier.classifier: Row 37 failed:
+Traceback (most recent call last):
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 113, in call_llm
+    response = client.chat.completions.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_utils\_utils.py", line 298, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1239, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_base_client.py", line 1332, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_base_client.py", line 1105, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.NotFoundError: Error code: 404 - {'error': {'message': 'The model `Qwen3.7-Max` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}, 'request_id': 'ed373eb7-8622-9ac4-8eb8-72eb7dcd8622'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 249, in classify_batch
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 286, in _classify_one
+    return classify_single(row, app_config, cache)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 213, in classify_single
+    response, token_usage = call_llm(system_prompt, user_prompt, app_config["llm"])
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 147, in call_llm
+    raise LLMCallError(status, str(body))
+complaint_classifier.models.LLMCallError: LLM call failed [404]: {'message': 'The model `Qwen3.7-Max` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}
+
+2026-06-10 11:23:26,843 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:23:26,843 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:23:26,846 [ERROR] complaint_classifier.classifier: Row 39 failed:
+Traceback (most recent call last):
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 113, in call_llm
+    response = client.chat.completions.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_utils\_utils.py", line 298, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1239, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_base_client.py", line 1332, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_base_client.py", line 1105, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.NotFoundError: Error code: 404 - {'error': {'message': 'The model `Qwen3.7-Max` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}, 'request_id': '83326ecc-89ac-983f-8ccd-324c112e00a3'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 249, in classify_batch
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 286, in _classify_one
+    return classify_single(row, app_config, cache)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 213, in classify_single
+    response, token_usage = call_llm(system_prompt, user_prompt, app_config["llm"])
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 147, in call_llm
+    raise LLMCallError(status, str(body))
+complaint_classifier.models.LLMCallError: LLM call failed [404]: {'message': 'The model `Qwen3.7-Max` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}
+
+2026-06-10 11:23:26,849 [ERROR] complaint_classifier.classifier: Row 40 failed:
+Traceback (most recent call last):
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 113, in call_llm
+    response = client.chat.completions.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_utils\_utils.py", line 298, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1239, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_base_client.py", line 1332, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_base_client.py", line 1105, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.NotFoundError: Error code: 404 - {'error': {'message': 'The model `Qwen3.7-Max` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}, 'request_id': '273bc343-3e07-985e-9b1f-a5e279e93312'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 249, in classify_batch
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 286, in _classify_one
+    return classify_single(row, app_config, cache)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 213, in classify_single
+    response, token_usage = call_llm(system_prompt, user_prompt, app_config["llm"])
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 147, in call_llm
+    raise LLMCallError(status, str(body))
+complaint_classifier.models.LLMCallError: LLM call failed [404]: {'message': 'The model `Qwen3.7-Max` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}
+
+2026-06-10 11:23:26,850 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:23:26,852 [ERROR] complaint_classifier.classifier: Row 38 failed:
+Traceback (most recent call last):
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 113, in call_llm
+    response = client.chat.completions.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_utils\_utils.py", line 298, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1239, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_base_client.py", line 1332, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_base_client.py", line 1105, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.NotFoundError: Error code: 404 - {'error': {'message': 'The model `Qwen3.7-Max` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}, 'request_id': 'da7ac120-d6c4-9b77-a185-d8ffb5040e48'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 249, in classify_batch
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 286, in _classify_one
+    return classify_single(row, app_config, cache)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 213, in classify_single
+    response, token_usage = call_llm(system_prompt, user_prompt, app_config["llm"])
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 147, in call_llm
+    raise LLMCallError(status, str(body))
+complaint_classifier.models.LLMCallError: LLM call failed [404]: {'message': 'The model `Qwen3.7-Max` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}
+
+2026-06-10 11:23:26,881 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:23:26,883 [ERROR] complaint_classifier.classifier: Row 41 failed:
+Traceback (most recent call last):
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 113, in call_llm
+    response = client.chat.completions.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_utils\_utils.py", line 298, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1239, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_base_client.py", line 1332, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_base_client.py", line 1105, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.NotFoundError: Error code: 404 - {'error': {'message': 'The model `Qwen3.7-Max` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}, 'request_id': '68f3df21-8d17-9c32-930b-19393a8adfec'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 249, in classify_batch
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 286, in _classify_one
+    return classify_single(row, app_config, cache)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 213, in classify_single
+    response, token_usage = call_llm(system_prompt, user_prompt, app_config["llm"])
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 147, in call_llm
+    raise LLMCallError(status, str(body))
+complaint_classifier.models.LLMCallError: LLM call failed [404]: {'message': 'The model `Qwen3.7-Max` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}
+
+2026-06-10 11:23:28,546 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:23:28,735 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:23:28,738 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:23:28,739 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:23:28,785 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:23:29,600 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:23:29,784 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:23:29,790 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:23:29,802 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:23:29,848 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:23:31,659 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:23:31,661 [ERROR] complaint_classifier.classifier: Row 42 failed:
+Traceback (most recent call last):
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 113, in call_llm
+    response = client.chat.completions.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_utils\_utils.py", line 298, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1239, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_base_client.py", line 1332, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_base_client.py", line 1105, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.NotFoundError: Error code: 404 - {'error': {'message': 'The model `Qwen3.7-Max` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}, 'request_id': 'f345931e-f9e4-962b-8a88-2dfcddff4698'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 249, in classify_batch
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 286, in _classify_one
+    return classify_single(row, app_config, cache)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 213, in classify_single
+    response, token_usage = call_llm(system_prompt, user_prompt, app_config["llm"])
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 147, in call_llm
+    raise LLMCallError(status, str(body))
+complaint_classifier.models.LLMCallError: LLM call failed [404]: {'message': 'The model `Qwen3.7-Max` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}
+
+2026-06-10 11:23:31,841 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:23:31,842 [ERROR] complaint_classifier.classifier: Row 43 failed:
+Traceback (most recent call last):
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 113, in call_llm
+    response = client.chat.completions.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_utils\_utils.py", line 298, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1239, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_base_client.py", line 1332, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_base_client.py", line 1105, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.NotFoundError: Error code: 404 - {'error': {'message': 'The model `Qwen3.7-Max` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}, 'request_id': '2dc1076d-bdf6-91cd-86e1-43df72e57791'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 249, in classify_batch
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 286, in _classify_one
+    return classify_single(row, app_config, cache)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 213, in classify_single
+    response, token_usage = call_llm(system_prompt, user_prompt, app_config["llm"])
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 147, in call_llm
+    raise LLMCallError(status, str(body))
+complaint_classifier.models.LLMCallError: LLM call failed [404]: {'message': 'The model `Qwen3.7-Max` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}
+
+2026-06-10 11:23:31,843 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:23:31,846 [ERROR] complaint_classifier.classifier: Row 45 failed:
+Traceback (most recent call last):
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 113, in call_llm
+    response = client.chat.completions.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_utils\_utils.py", line 298, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1239, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_base_client.py", line 1332, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_base_client.py", line 1105, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.NotFoundError: Error code: 404 - {'error': {'message': 'The model `Qwen3.7-Max` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}, 'request_id': '84b4448c-4d9d-9e80-a4c8-f62b517f725d'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 249, in classify_batch
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 286, in _classify_one
+    return classify_single(row, app_config, cache)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 213, in classify_single
+    response, token_usage = call_llm(system_prompt, user_prompt, app_config["llm"])
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 147, in call_llm
+    raise LLMCallError(status, str(body))
+complaint_classifier.models.LLMCallError: LLM call failed [404]: {'message': 'The model `Qwen3.7-Max` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}
+
+2026-06-10 11:23:31,866 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:23:31,867 [ERROR] complaint_classifier.classifier: Row 44 failed:
+Traceback (most recent call last):
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 113, in call_llm
+    response = client.chat.completions.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_utils\_utils.py", line 298, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1239, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_base_client.py", line 1332, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_base_client.py", line 1105, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.NotFoundError: Error code: 404 - {'error': {'message': 'The model `Qwen3.7-Max` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}, 'request_id': '7ab66bf4-7103-92c4-845b-f7ab06041429'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 249, in classify_batch
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 286, in _classify_one
+    return classify_single(row, app_config, cache)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 213, in classify_single
+    response, token_usage = call_llm(system_prompt, user_prompt, app_config["llm"])
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 147, in call_llm
+    raise LLMCallError(status, str(body))
+complaint_classifier.models.LLMCallError: LLM call failed [404]: {'message': 'The model `Qwen3.7-Max` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}
+
+2026-06-10 11:23:31,908 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:23:31,912 [ERROR] complaint_classifier.classifier: Row 46 failed:
+Traceback (most recent call last):
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 113, in call_llm
+    response = client.chat.completions.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_utils\_utils.py", line 298, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1239, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_base_client.py", line 1332, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_base_client.py", line 1105, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.NotFoundError: Error code: 404 - {'error': {'message': 'The model `Qwen3.7-Max` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}, 'request_id': 'b59d4097-c014-9db2-accf-395545114ce4'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 249, in classify_batch
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 286, in _classify_one
+    return classify_single(row, app_config, cache)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 213, in classify_single
+    response, token_usage = call_llm(system_prompt, user_prompt, app_config["llm"])
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 147, in call_llm
+    raise LLMCallError(status, str(body))
+complaint_classifier.models.LLMCallError: LLM call failed [404]: {'message': 'The model `Qwen3.7-Max` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}
+
+2026-06-10 11:23:33,420 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:23:33,682 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:23:33,709 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:23:33,711 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:23:33,737 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:23:34,477 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:23:34,736 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:23:34,763 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:23:34,772 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:23:34,795 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:23:36,534 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:23:36,535 [ERROR] complaint_classifier.classifier: Row 47 failed:
+Traceback (most recent call last):
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 113, in call_llm
+    response = client.chat.completions.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_utils\_utils.py", line 298, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1239, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_base_client.py", line 1332, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_base_client.py", line 1105, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.NotFoundError: Error code: 404 - {'error': {'message': 'The model `Qwen3.7-Max` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}, 'request_id': '07f967c9-f323-9d28-8e1f-0be63f26b7f4'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 249, in classify_batch
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 286, in _classify_one
+    return classify_single(row, app_config, cache)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 213, in classify_single
+    response, token_usage = call_llm(system_prompt, user_prompt, app_config["llm"])
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 147, in call_llm
+    raise LLMCallError(status, str(body))
+complaint_classifier.models.LLMCallError: LLM call failed [404]: {'message': 'The model `Qwen3.7-Max` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}
+
+2026-06-10 11:23:36,791 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:23:36,793 [ERROR] complaint_classifier.classifier: Row 48 failed:
+Traceback (most recent call last):
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 113, in call_llm
+    response = client.chat.completions.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_utils\_utils.py", line 298, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1239, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_base_client.py", line 1332, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_base_client.py", line 1105, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.NotFoundError: Error code: 404 - {'error': {'message': 'The model `Qwen3.7-Max` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}, 'request_id': 'cff96d81-2533-90d7-8a23-4d1fdb6b52b7'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 249, in classify_batch
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 286, in _classify_one
+    return classify_single(row, app_config, cache)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 213, in classify_single
+    response, token_usage = call_llm(system_prompt, user_prompt, app_config["llm"])
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 147, in call_llm
+    raise LLMCallError(status, str(body))
+complaint_classifier.models.LLMCallError: LLM call failed [404]: {'message': 'The model `Qwen3.7-Max` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}
+
+2026-06-10 11:23:36,818 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:23:36,818 [ERROR] complaint_classifier.classifier: Row 49 failed:
+Traceback (most recent call last):
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 113, in call_llm
+    response = client.chat.completions.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_utils\_utils.py", line 298, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1239, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_base_client.py", line 1332, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_base_client.py", line 1105, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.NotFoundError: Error code: 404 - {'error': {'message': 'The model `Qwen3.7-Max` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}, 'request_id': 'ae6308ed-c832-9020-a0a8-324ec40ece18'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 249, in classify_batch
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 286, in _classify_one
+    return classify_single(row, app_config, cache)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 213, in classify_single
+    response, token_usage = call_llm(system_prompt, user_prompt, app_config["llm"])
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 147, in call_llm
+    raise LLMCallError(status, str(body))
+complaint_classifier.models.LLMCallError: LLM call failed [404]: {'message': 'The model `Qwen3.7-Max` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}
+
+2026-06-10 11:23:36,830 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:23:36,831 [ERROR] complaint_classifier.classifier: Row 50 failed:
+Traceback (most recent call last):
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 113, in call_llm
+    response = client.chat.completions.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_utils\_utils.py", line 298, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1239, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_base_client.py", line 1332, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_base_client.py", line 1105, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.NotFoundError: Error code: 404 - {'error': {'message': 'The model `Qwen3.7-Max` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}, 'request_id': 'bcf97065-5d94-92cd-97ae-2eb6798c3469'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 249, in classify_batch
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 286, in _classify_one
+    return classify_single(row, app_config, cache)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 213, in classify_single
+    response, token_usage = call_llm(system_prompt, user_prompt, app_config["llm"])
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 147, in call_llm
+    raise LLMCallError(status, str(body))
+complaint_classifier.models.LLMCallError: LLM call failed [404]: {'message': 'The model `Qwen3.7-Max` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}
+
+2026-06-10 11:23:36,845 [INFO] httpx: HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-06-10 11:23:36,846 [ERROR] complaint_classifier.classifier: Row 51 failed:
+Traceback (most recent call last):
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 113, in call_llm
+    response = client.chat.completions.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_utils\_utils.py", line 298, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1239, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_base_client.py", line 1332, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\site-packages\openai\_base_client.py", line 1105, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.NotFoundError: Error code: 404 - {'error': {'message': 'The model `Qwen3.7-Max` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}, 'request_id': '8788b64f-1086-9f88-9e19-1a58cb4770be'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 249, in classify_batch
+    result = future.result()
+             ^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Python\python_3.12.0\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 286, in _classify_one
+    return classify_single(row, app_config, cache)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 213, in classify_single
+    response, token_usage = call_llm(system_prompt, user_prompt, app_config["llm"])
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wen\Desktop\移动工作\工作\分类投诉ai分析\src\complaint_classifier\classifier.py", line 147, in call_llm
+    raise LLMCallError(status, str(body))
+complaint_classifier.models.LLMCallError: LLM call failed [404]: {'message': 'The model `Qwen3.7-Max` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}
+

@@ -1,0 +1,12 @@
+Metadata-Version: 2.4
+Name: complaint-classifier
+Version: 0.1.0
+Summary: AI-powered complaint archive opinion classifier
+Requires-Python: >=3.11
+Requires-Dist: openpyxl>=3.1
+Requires-Dist: openai>=1.0
+Requires-Dist: pyyaml>=6.0
+Requires-Dist: tqdm>=4.66
+Provides-Extra: dev
+Requires-Dist: pytest>=8.0; extra == "dev"
+Requires-Dist: mypy>=1.8; extra == "dev"

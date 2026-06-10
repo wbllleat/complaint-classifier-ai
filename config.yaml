@@ -1,0 +1,76 @@
+# ===== LLM 连接配置 =====
+llm:
+  provider: qwen # openai | azure | ollama | deepseek | qwen
+  model: qwen-max
+  api_key_env: sk-45c439fda6de43fcb5e8e516c161fe65
+#  base_url: https://maas.gd.chinamobile.com:36007/ai/aiFactoryServer/v1/apis/1/v1 # 可选，自定义 API 端点
+  base_url: https://dashscope.aliyuncs.com/compatible-mode/v1 # 千问3.7
+  temperature: 0.0 # 分类任务建议 0
+  max_tokens: 300
+
+# ===== 分类体系配置 =====
+classify:
+  categories:
+    费用争议:
+      - 流量超套扣费
+      - 增值业务扣费
+      - 套餐费用不符
+      - 账单异常
+      - 主副卡费用
+    服务质量:
+      - 解释不到位
+      - 未及时联系客户
+      - 处理方案不合理
+      - 服务态度问题
+    业务办理:
+      - 套餐变更争议
+      - 合约协议争议
+      - 办理流程问题
+      - 营销宣传争议
+    网络质量:
+      - 信号覆盖问题
+      - 网速不达标
+      - 断网掉线
+    其他:
+      - 其他原因
+  prompt_template_path: prompts/default_classify.yaml
+  output_schema_version: "1.0"
+  few_shot_examples:
+    - text: |
+        【问题概述】客户反映流量扣费问题
+        【查证情况】核实扣费无误，有短信提醒
+        【处理方案】直接解释
+      primary: 费用争议
+      secondary: 流量超套扣费
+      reasoning: 客户对流量扣费有疑问，经查扣费无误，属于费用争议
+    - text: |
+        【问题概述】客户反映信号差
+        【查证情况】基站覆盖正常
+        【处理方案】解释，建议更换位置
+      primary: 网络质量
+      secondary: 信号覆盖问题
+      reasoning: 客户投诉信号质量，属于网络质量问题
+    - text: |
+        【问题概述】客户要求更改套餐
+        【查证情况】套餐合约未到期
+        【处理方案】解释合约条款
+      primary: 业务办理
+      secondary: 套餐变更争议
+      reasoning: 客户要求变更套餐受限于合约，属业务办理类
+    - text: |
+        【问题概述】客户反映客服态度差
+        【查证情况】已听取录音
+        【处理方案】道歉
+      primary: 服务质量
+      secondary: 服务态度问题
+      reasoning: 投诉客服态度，属于服务质量类
+
+# ===== 运行时配置 =====
+runtime:
+  concurrency: 6 # 并发 API 调用数 (1-10)
+  rate_limit_rpm: 500 # 每分钟最大请求数
+  retry_max_attempts: 3 # 最大重试次数
+  retry_backoff_base: 1.0 # 退避基数(秒)
+  checkpoint_interval: 500 # 每 N 条保存检查点
+  archive_column_name: 归档意见
+  mask_phone: false # 是否脱敏手机号
