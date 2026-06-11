@@ -1,5 +1,0 @@
-2026-06-09 15:37:45,589 [INFO] httpx: HTTP Request: POST https://maas.gd.chinamobile.com:36007/ai/aiFactoryServer/v1/apis/1/v1/chat/completions "HTTP/1.1 200 "
-2026-06-09 15:37:45,615 [INFO] httpx: HTTP Request: POST https://maas.gd.chinamobile.com:36007/ai/aiFactoryServer/v1/apis/1/v1/chat/completions "HTTP/1.1 200 "
-2026-06-09 15:37:45,691 [INFO] httpx: HTTP Request: POST https://maas.gd.chinamobile.com:36007/ai/aiFactoryServer/v1/apis/1/v1/chat/completions "HTTP/1.1 200 "
-2026-06-09 15:37:54,743 [INFO] httpx: HTTP Request: POST https://maas.gd.chinamobile.com:36007/ai/aiFactoryServer/v1/apis/1/v1/chat/completions "HTTP/1.1 200 "
-2026-06-09 15:37:55,334 [INFO] httpx: HTTP Request: POST https://maas.gd.chinamobile.com:36007/ai/aiFactoryServer/v1/apis/1/v1/chat/completions "HTTP/1.1 200 "

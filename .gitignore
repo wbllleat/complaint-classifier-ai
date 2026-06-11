@@ -1,0 +1,29 @@
+﻿# Python 缓存
+__pycache__/
+*.pyc
+*.pyo
+
+# 运行日志
+logs/
+
+# 输出产物
+output/
+
+# 临时/会话文件
+SESSION_SUMMARY.md
+
+# 执行文档
+AGENTS.md
+PRD.md
+RESEARCH.md
+TECH_DESIGN.md
+run.txt
+
+# 临时测试数据子集
+投诉流量前300行.xlsx
+
+# IDE / 编辑器
+.idea/
+.vscode/
+*.swp
+*.swo
