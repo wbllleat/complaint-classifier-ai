@@ -1,5 +1,5 @@
 # 校验配置
-python -m complaint_classifier check-config
+
 
 # 测试（替换数字即可）
 python -m complaint_classifier test 广义投诉流量202605.xlsx --sample 5
