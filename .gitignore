@@ -27,3 +27,7 @@ run.txt
 .vscode/
 *.swp
 *.swo
+
+# 测试数据（仅本地使用）
+分类投诉例子.xlsx
+广义投诉流量202605.xlsx
